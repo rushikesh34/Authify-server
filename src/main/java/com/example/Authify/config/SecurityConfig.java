@@ -64,7 +64,7 @@ public class SecurityConfig {
 	
 	private CorsConfigurationSource corsconfigurationsource() {
 		CorsConfiguration config=new CorsConfiguration();
-		config.setAllowedOrigins(List.of("https://authify-beta.vercel.app"));
+		config.setAllowedOrigins(List.of("https://authify-git-main-rushikesh-shrikhandes-projects.vercel.app"));
 		config.setAllowedMethods(List.of("GET","POST","PUT","DELETE","PATCH","OPTIONS"));
 		config.setAllowedHeaders(List.of("Authorization", "Content-Type", "X-Requested-With", "Origin", "Accept"));
 		config.setAllowCredentials(true);
