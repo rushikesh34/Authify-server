@@ -60,17 +60,13 @@ public class SecurityConfig {
 		return new BCryptPasswordEncoder();
 	}
 
-	
-	@Bean
-	public CorsFilter corsfilter() {
-		return new CorsFilter(corsconfigurationsource());
-	}
+
 	
 	private CorsConfigurationSource corsconfigurationsource() {
 		CorsConfiguration config=new CorsConfiguration();
 		config.setAllowedOrigins(List.of("https://authify-beta.vercel.app"));
 		config.setAllowedMethods(List.of("GET","POST","PUT","DELETE","PATCH","OPTIONS"));
-		config.setAllowedHeaders(List.of("*"));
+		config.setAllowedHeaders(List.of("Authorization", "Content-Type", "X-Requested-With", "Origin", "Accept"));
 		config.setAllowCredentials(true);
 		
 		UrlBasedCorsConfigurationSource source=new UrlBasedCorsConfigurationSource();
